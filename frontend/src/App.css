@@ -1,0 +1,174 @@
+/* RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Inter", sans-serif;
+  background-color: #0D1117;
+  color: #C9D1D9;
+  display: flex;
+  justify-content: center;
+  padding: 40px 20px;
+}
+
+.app {
+  width: 100%;
+  max-width: 900px;
+}
+
+/* INTRO / HERO SECTION */
+.intro {
+  text-align: center;
+  margin-bottom: 28px;
+}
+
+.intro h1 {
+  font-size: 28px;
+  font-weight: 600;
+  color: #58A6FF;
+  margin-bottom: 10px;
+}
+
+.intro p {
+  color: #8B949E;
+}
+
+.intro ul {
+  text-align: left;
+  margin: 12px auto;
+  max-width: 500px;
+  color: #8B949E;
+  line-height: 1.45;
+}
+
+/* STATUS */
+.status {
+  padding: 12px;
+  font-weight: 500;
+  border-radius: 6px;
+  margin-bottom: 16px;
+  text-align: center;
+}
+
+.status.success {
+  background: rgba(35, 134, 54, 0.2);
+  color: #2EA043;
+  border: 1px solid #238636;
+}
+
+.status.error {
+  background: rgba(248, 81, 73, 0.15);
+  color: #F85149;
+  border: 1px solid #F85149;
+}
+
+/* CARD */
+.card {
+  background: #161B22;
+  border: 1px solid #30363D;
+  border-radius: 10px;
+  padding: 24px;
+  margin-bottom: 20px;
+  width: 100%;
+}
+
+.card h2 {
+  margin-bottom: 16px;
+  color: #E6EDF3;
+}
+
+/* FORM */
+.field {
+  margin-bottom: 16px;
+  display: flex;
+  flex-direction: column;
+}
+
+.field span {
+  font-size: 14px;
+  color: #8B949E;
+}
+
+.field input {
+  margin-top: 6px;
+  padding: 10px 12px;
+  border: 1px solid #30363D;
+  background: #0D1117;
+  color: #fff;
+  border-radius: 6px;
+}
+
+.field input:focus {
+  outline: none;
+  border-color: #58A6FF;
+  box-shadow: 0 0 0 1px #1F6FEB;
+}
+
+/* BUTTONS */
+button {
+  background: #238636;
+  color: #fff;
+  padding: 10px 16px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+button:hover:not(:disabled) {
+  background: #2EA043;
+}
+
+button:disabled {
+  opacity: 0.6;
+  cursor: default;
+}
+
+/* RESULTS UI */
+.row {
+  margin-bottom: 14px;
+}
+
+.row h3 {
+  font-size: 15px;
+  margin-bottom: 4px;
+  color: #E6EDF3;
+}
+
+.pill-row {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.pill {
+  padding: 4px 10px;
+  font-size: 12px;
+  border-radius: 12px;
+  background: #21262D;
+  color: #C9D1D9;
+  border: 1px solid #30363D;
+}
+
+.pill-secondary {
+  background: rgba(88, 166, 255, 0.15);
+  border-color: #58A6FF;
+}
+
+.json-block {
+  background: #0D1117;
+  border: 1px solid #30363D;
+  border-radius: 6px;
+  padding: 10px;
+  max-height: 200px;
+  overflow-x: auto;
+  font-size: 12px;
+}
+
+.result-buttons {
+  display: flex;
+  gap: 10px;
+  margin-top: 14px;
+}
