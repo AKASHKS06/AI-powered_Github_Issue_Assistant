@@ -1,6 +1,0 @@
-fastapi
-uvicorn[standard]
-streamlit
-requests
-google-generativeai
-pydantic
