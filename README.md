@@ -22,7 +22,7 @@ You do not need to install Python or Node.
 
 1️⃣ Clone the repository
 
-git clone https://github.com/YOUR_USERNAME/seedling-labs-ai-github-assistant.git
+git clone https://github.com/AKASHKS06/AI-powered_Github_Issue_Assistant.git
 cd seedling-labs-ai-github-assistant
 
 ------------------------------------------------------------------
