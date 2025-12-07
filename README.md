@@ -36,6 +36,15 @@ This project uses Gemini LLM
 
 Replace api key in cp with api key from https://aistudio.google.com/u/2/api-keys
 
+Steps:
+
+1. Log in to Google Ai studio
+2. Go to **API Keys**
+3. Copy the api key
+
+Add it to the `.env` file:
+
+
 Add your GitHub token to avoid rate limit:
 
 GITHUB_TOKEN=your_github_pat_here
