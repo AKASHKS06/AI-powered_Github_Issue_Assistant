@@ -32,9 +32,15 @@ cd AI-powered_Github_Issue_Assistant
 
 cp .env.example .env
 
+This project uses Gemini LLM
+
+Replace api key in cp with api key from https://aistudio.google.com/u/2/api-keys
+
 Add your GitHub token to avoid rate limit:
 
 GITHUB_TOKEN=your_github_pat_here
+
+Get github token from https://github.com/settings/tokens (select public_repo only)
 
 ------------------------------------------------------------------
 
