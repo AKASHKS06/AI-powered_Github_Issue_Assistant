@@ -55,7 +55,7 @@ Get github token from https://github.com/settings/tokens (select public_repo onl
 
 3️⃣ Build and start the entire app
 
-docker compose up --build
+docker compose up 
 
 This launches:
 
