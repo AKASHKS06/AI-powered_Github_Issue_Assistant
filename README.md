@@ -1,151 +1,142 @@
-🌱 Seedling Labs — AI-Powered GitHub Issue Assistant
+# 🌱 Seedling Labs — AI-Powered GitHub Issue Assistant
 
-Analyze GitHub issues intelligently using LLMs, suggest issue types, priorities, labels, developer insights, and more.
+---
 
-Scans real GitHub issues → Fetches metadata → AI analyzes context → Returns structured JSON + smart summaries.
+# 📦 Installation & Setup
 
-🚀 Features
+This project includes both a *FastAPI backend* and a *React frontend*, and can be run either:
 
-✔ AI-powered issue classification & prioritization
-✔ Suggested GitHub labels
-✔ Developer insights (author, timestamps, metadata)
-✔ Smart comment filtering (skips “+1”, emojis, spam)
-✔ Clean JSON export + copy buttons
-✔ FastAPI backend + React frontend
-✔ Fully containerized (Docker Compose)
+* ⚡ Using Docker (recommended — under 5 minutes)
+* 🛠️ Manually (Python + Node.js)
 
-📦 Installation & Setup
+Below are simple, reliable instructions for both.
 
-This project includes:
+------------------------------------------------------------------
 
-Component	Tech	Port
-Backend	FastAPI	8000
-Frontend	React	3000
+# 🐳 Option 1: Run with Docker (Recommended)
 
-You can run via:
+This is the fastest and most reliable setup.
+You do not need to install Python or Node.
 
-🐳 Docker (Recommended — 1 command only)
-
-🖥️ Manual setup (Node + Python)
-
-🐳 Option 1 — Run with Docker (Recommended)
-
-Requires only Docker Desktop installed.
+------------------------------------------------------------------
 
 1️⃣ Clone the repository
+
 git clone https://github.com/YOUR_USERNAME/seedling-labs-ai-github-assistant.git
 cd seedling-labs-ai-github-assistant
 
-2️⃣ Setup environment
+------------------------------------------------------------------
 
-Copy the example file:
+2️⃣ Setup environment
 
 cp .env.example .env
 
+Add your GitHub token to avoid rate limit:
 
-Then insert:
+GITHUB_TOKEN=your_github_pat_here
 
-GITHUB_TOKEN=your_github_pat_here   # recommended to avoid rate limits
+------------------------------------------------------------------
 
-3️⃣ Start everything
+3️⃣ Build and start the entire app
+
 docker compose up --build
 
-4️⃣ Access the app
-URL	Description
-🔗 http://localhost:3000
-React UI
-🔗 http://localhost:8000/docs
-Backend API docs (Swagger UI)
-5️⃣ Stop / Cleanup
-docker compose down   # stop
-docker system prune -af  # optional cleanup
+This launches:
 
-🛠 Option 2 — Manual Installation (Without Docker)
+Service            | Port  | Description
+-----------------|-------|---------------------------------------
+Backend (FastAPI) | 8000  | GitHub fetching + AI analysis
+Frontend (React)  | 3000  | User interface
 
-If you prefer running services individually:
+------------------------------------------------------------------
 
-Backend Setup (FastAPI)
+4️⃣ Open the app
+
+Frontend → http://localhost:3000  
+Backend API docs → http://localhost:8000/docs  
+
+------------------------------------------------------------------
+
+5️⃣ Stop containers
+
+docker compose down
+
+------------------------------------------------------------------
+
+6️⃣ (Optional) Cleanup
+
+docker system prune -af
+
+------------------------------------------------------------------
+
+# 🐍 Option 2: Manual Installation (Without Docker)
+
+Use this method if you prefer running services separately.
+
+------------------------------------------------------------------
+
+Backend Setup — FastAPI
+
 cd backend
 python -m venv venv
-venv\Scripts\activate  # Windows
-# or: source venv/bin/activate on macOS/Linux
-
+venv\Scripts\activate   # Windows
+# or: source venv/bin/activate (Mac/Linux)
 pip install -r requirements.txt
 uvicorn main:app --reload --host 0.0.0.0 --port 8000
 
-
-Access backend:
-
+Backend runs at:
 http://localhost:8000
 http://localhost:8000/docs
 
-Frontend Setup (React)
+------------------------------------------------------------------
 
-Open another terminal:
+Frontend Setup — React
 
 cd frontend
 npm install
 npm start
 
-
-Runs at
-
+Frontend runs at:
 http://localhost:3000
 
-🔑 Environment Variables
+------------------------------------------------------------------
 
-Create a .env file in the project root (or backend root):
+# 🔧 Environment Variables
 
-GITHUB_TOKEN=your_github_personal_access_token_here
+Create `.env` file in project root:
 
+GITHUB_TOKEN=your_github_pat_here
 
-📌 GitHub token recommended to avoid API rate limits.
+📌 Recommended to avoid GitHub rate limits.
 
-✨ Example Usage
+------------------------------------------------------------------
 
-Try analyzing a real issue:
+# 🧪 Testing Installation
 
-Input	Example
-Repository	https://github.com/facebook/react
-Issue Number	1
+Use any public issue:
 
-Output will include:
+Repo: https://github.com/facebook/react  
+Issue #: 1
 
-📝 Summary
+Expected output:
 
-🪛 Type classification (bug, feature, etc.)
+• Summary  
+• Analysis insights  
+• Suggested labels  
+• Developer metadata  
+• JSON response  
 
-🚦 Priority score
+------------------------------------------------------------------
 
-🏷 Suggested labels
+# 🚨 Troubleshooting
 
-💡 Developer info
+Issue | Fix
+-----|----
+White screen UI | Clear browser localStorage
+GitHub 403 | Add token in `.env`
+Backend not reachable | Ensure port 8000 is free
+Docker slow on Windows | Enable WSL2 backend
 
-🧱 JSON structure you can reuse
+------------------------------------------------------------------
 
-❗ Troubleshooting
-Issue	Solution
-White screen on load	Clear local storage (cached JSON)
-Rate limit exceeded	Add GitHub token in .env
-Backend not reachable	Make sure port 8000 not blocked
-Docker slow on Windows	Enable WSL2 backend in Docker Desktop
-📌 Tech Stack
-Category	Tools
-Frontend	React, Fetch API, Tailwind-style CSS
-Backend	FastAPI, Pydantic, Uvicorn
-AI	Gemini API (via google-generativeai)
-Deployment	Docker Compose
-🛡 Security Notes
-
-✔ .env is ignored by git
-✔ .env.example is safe to upload
-✔ No sensitive API keys should go into UI
-
-🤝 Contributing
-
-Pull requests are welcome!
-Feel free to open issues for feature requests or enhancements.
-
-📜 License
-
-MIT License © 2025 Seedling Labs
+# 🎉 Done!
