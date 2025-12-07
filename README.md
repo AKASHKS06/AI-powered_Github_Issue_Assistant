@@ -30,11 +30,9 @@ cd AI-powered_Github_Issue_Assistant
 
 2️⃣ Setup environment
 
-cp .env.example .env
-
 This project uses Gemini LLM
 
-Replace api key in cp with api key from https://aistudio.google.com/u/2/api-keys
+Replace dummy api key in .env with api key from https://aistudio.google.com/api-keys
 
 Steps:
 
@@ -42,7 +40,7 @@ Steps:
 2. Go to **API Keys**
 3. Copy the api key
 
-Add it to the `.env` file:
+Add it to the `.env` file: 
 
 
 Add your GitHub token to avoid rate limit:
@@ -55,7 +53,9 @@ Get github token from https://github.com/settings/tokens (select public_repo onl
 
 3️⃣ Build and start the entire app
 
-docker compose up 
+docker compose up --build  (Slow, but to ensure api keys are saved)
+
+docker compose up (Faster. Use for subsequent runs)
 
 This launches:
 
